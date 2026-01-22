@@ -1,0 +1,13 @@
+C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Mdlapps\ZhiBan.dll.config
+C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Mdlapps\ZhiBan.dll
+C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Mdlapps\ZhiBan.pdb
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.csproj.AssemblyReference.cache
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.LoginForm.resources
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.MainForm.resources
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.Pic.resources
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.csproj.GenerateResource.cache
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.csproj.CoreCompileInputs.cache
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.csproj.Up2Date
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.dll
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.pdb
+D:\2024工作\科技立项\考古\趾板-12月终极版\考古修改\ZhiBan\obj\x64\Debug\ZhiBan.Form智能设计.resources
