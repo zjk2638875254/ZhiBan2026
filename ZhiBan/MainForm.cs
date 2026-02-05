@@ -70,17 +70,26 @@ namespace ZhiBan
             data_xys.DataSource = dt;
             data_xys.ReadOnly = true;
 
-            //测试好看
-            start_x.Value = 4813028.382M;
-            start_y.Value = 43379979.896M;
-            start_z.Value = 836M;
+
             //4813128.341, 43380128.711
             //4813177.617, 43380322.545
             //end_x.Value = 4813028.382M + 4813177.617M - 4813128.341M;
             //end_y.Value = 43379979.89M + 43380322.545M - 43380128.711M;
+
+            /*上库盆
+            start_x.Value = 4813028.382M;
+            start_y.Value = 43379979.896M;
+            start_z.Value = 836M;
             end_x.Value = 4813212.294M;
             end_y.Value = 43380652.147M;
             end_z.Value = 836M;
+            */
+            start_x.Value = 37566495.0994M;
+            start_y.Value = 3886257.9662M;
+            start_z.Value = 388.5M;
+            end_x.Value = 37566275.1199M;
+            end_y.Value = 3886118.945M;
+            end_z.Value = 388.5M;
         }
 
         private void 导入体型参数ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +114,7 @@ namespace ZhiBan
                 BeginFunc_V1.math_calculate(data_xy, data_para, start, end, dam_rate, data_dam_len, ref message);
                 txt_show.Text += message;
                 */
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "警告5");
@@ -154,15 +163,20 @@ namespace ZhiBan
 
         private void 测试按板长建模ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool direction_ab = true;
-            if (DirABFalse.Checked)
-                direction_ab = false;
-            point start = new point(Convert.ToDouble(start_x.Value), Convert.ToDouble(start_y.Value), Convert.ToDouble(start_z.Value));
-            point end = new point(Convert.ToDouble(end_x.Value), Convert.ToDouble(end_y.Value), Convert.ToDouble(end_z.Value));
-            double dam_rate = Convert.ToDouble(rate_dam_input.SelectedItem);
-            string message = "";
-            BeginFunc_AutoCut._init_(data_xy, data_para, start, end, dam_rate, direction_ab, ref message);
-            txt_show.Text += message;
+            
+        }
+
+        private void 导入坝轴线坐标ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string xls_file = excel_lib.read_filepath();
+            DataTable dt = excel_lib.GetData(xls_file);
+
+            start_x.Value = Convert.ToDecimal(dt.Rows[1][1].ToString());
+            start_y.Value = Convert.ToDecimal(dt.Rows[1][2].ToString());
+            start_z.Value = Convert.ToDecimal(dt.Rows[1][3].ToString());
+            end_x.Value = Convert.ToDecimal(dt.Rows[2][1].ToString());
+            end_y.Value = Convert.ToDecimal(dt.Rows[2][2].ToString());
+            end_z.Value = Convert.ToDecimal(dt.Rows[2][3].ToString());
         }
     }
 }

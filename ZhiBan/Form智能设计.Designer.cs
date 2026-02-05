@@ -107,6 +107,8 @@
             this.智能设计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.三维建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.面板建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.面板Len1 = new System.Windows.Forms.NumericUpDown();
@@ -981,7 +983,8 @@
             this.文件ToolStripMenuItem,
             this.智能设计ToolStripMenuItem,
             this.三维建模ToolStripMenuItem,
-            this.面板建模ToolStripMenuItem});
+            this.面板建模ToolStripMenuItem,
+            this.说明ToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(1267, 26);
@@ -1049,6 +1052,20 @@
             this.面板建模ToolStripMenuItem.Text = "面板建模";
             this.面板建模ToolStripMenuItem.Click += new System.EventHandler(this.面板建模ToolStripMenuItem_Click);
             // 
+            // 说明ToolStripMenuItem
+            // 
+            this.说明ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem});
+            this.说明ToolStripMenuItem.Name = "说明ToolStripMenuItem";
+            this.说明ToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
+            this.说明ToolStripMenuItem.Text = "说明";
+            // 
+            // 坝轴线方向与X线方向必须一致ToolStripMenuItem
+            // 
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem.Name = "坝轴线方向与X线方向必须一致ToolStripMenuItem";
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem.Size = new System.Drawing.Size(323, 22);
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem.Text = "1.坝轴线方向与X线方向必须一致";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -1076,6 +1093,11 @@
             this.面板Len1.Name = "面板Len1";
             this.面板Len1.Size = new System.Drawing.Size(79, 32);
             this.面板Len1.TabIndex = 118;
+            this.面板Len1.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // 面板Num1
             // 
@@ -1083,6 +1105,11 @@
             this.面板Num1.Name = "面板Num1";
             this.面板Num1.Size = new System.Drawing.Size(110, 32);
             this.面板Num1.TabIndex = 120;
+            this.面板Num1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label38
             // 
@@ -1116,6 +1143,11 @@
             this.面板Len2.Name = "面板Len2";
             this.面板Len2.Size = new System.Drawing.Size(79, 32);
             this.面板Len2.TabIndex = 122;
+            this.面板Len2.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             // 
             // label40
             // 
@@ -1132,6 +1164,11 @@
             this.面板Num3.Name = "面板Num3";
             this.面板Num3.Size = new System.Drawing.Size(110, 32);
             this.面板Num3.TabIndex = 128;
+            this.面板Num3.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label41
             // 
@@ -1149,6 +1186,11 @@
             this.面板Len3.Name = "面板Len3";
             this.面板Len3.Size = new System.Drawing.Size(79, 32);
             this.面板Len3.TabIndex = 126;
+            this.面板Len3.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // label42
             // 
@@ -1389,5 +1431,7 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.NumericUpDown 面板Len3;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ToolStripMenuItem 说明ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 坝轴线方向与X线方向必须一致ToolStripMenuItem;
     }
 }

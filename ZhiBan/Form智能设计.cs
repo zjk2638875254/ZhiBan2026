@@ -83,24 +83,42 @@ namespace ZhiBan
                 point p2 = p_list_right[1];
                 if(p1.z >= Convert.ToDouble(HeightLimit1.Value) || p2.z >= Convert.ToDouble(HeightLimit1.Value))
                 {
-                    double lNum = Math.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.x - p2.x) * (p1.y - p2.y) + (p1.y - p2.y) * (p1.z - p2.z));
+                    double len_p1 = 0, len_p2 = 0;
+                    面板_FuncHigh.get_len_面板(p1, start, end, dam_rate, data_xy, ref len_p1);
+                    面板_FuncHigh.get_len_面板(p2, start, end, dam_rate, data_xy, ref len_p2);
+                    double lNum = len_p2 - len_p1;
+                    Math.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.x - p2.x) * (p1.y - p2.y) + (p1.y - p2.y) * (p1.z - p2.z));
+                    Log.write_log("D://面板log.txt", i.ToString() + ": " + lNum.ToString() + "\r\n");
                     section_para para = new section_para(Convert.ToDouble(LaxNum1.Value), Convert.ToDouble(LbxNum1.Value), Convert.ToDouble(LadNum1.Value), Convert.ToDouble(LbcNum1.Value), Convert.ToDouble(tNum1.Value), Convert.ToDouble(mNum1.Value), lNum);
                     paras.Add(para);
                 }
                 else if (p1.z >= Convert.ToDouble(HeightLimit2.Value) || p2.z >= Convert.ToDouble(HeightLimit2.Value))
                 {
-                    double lNum = Math.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.x - p2.x) * (p1.y - p2.y) + (p1.y - p2.y) * (p1.z - p2.z));
+                    double len_p1 = 0, len_p2 = 0;
+                    面板_FuncHigh.get_len_面板(p1, start, end, dam_rate, data_xy, ref len_p1);
+                    面板_FuncHigh.get_len_面板(p2, start, end, dam_rate, data_xy, ref len_p2);
+                    double lNum = len_p2 - len_p1;
+                    Log.write_log("D://面板log.txt", i.ToString() + ": " + lNum.ToString() + "\r\n");
                     section_para para = new section_para(Convert.ToDouble(LaxNum2.Value), Convert.ToDouble(LbxNum2.Value), Convert.ToDouble(LadNum2.Value), Convert.ToDouble(LbcNum2.Value), Convert.ToDouble(tNum2.Value), Convert.ToDouble(mNum2.Value), lNum);
                     paras.Add(para);
                 }
                 else
                 {
-                    double lNum = Math.Sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.x - p2.x) * (p1.y - p2.y) + (p1.y - p2.y) * (p1.z - p2.z));
+                    double len_p1 = 0, len_p2 = 0;
+                    面板_FuncHigh.get_len_面板(p1, start, end, dam_rate, data_xy, ref len_p1);
+                    面板_FuncHigh.get_len_面板(p2, start, end, dam_rate, data_xy, ref len_p2);
+                    double lNum = len_p2 - len_p1;
+                    Log.write_log("D://面板log.txt", i.ToString() + ": " + lNum.ToString() + "\r\n");
                     section_para para = new section_para(Convert.ToDouble(LaxNum3.Value), Convert.ToDouble(LbxNum3.Value), Convert.ToDouble(LadNum3.Value), Convert.ToDouble(LbcNum3.Value), Convert.ToDouble(tNum3.Value), Convert.ToDouble(mNum3.Value), lNum);
                     paras.Add(para);
                 }
             }
             面板_FuncDam.multi_面板(data_xy, paras, start, end, dam_rate, mianban_high_list, ref message);
+            double[] 面板_list = new double[1] { 0.0 };
+            double[] 转弯_list = new double[1] { 0.0 };
+            面板_location.convert_arraylist(mianban_high_list, ref 面板_list);
+            面板_location.convert_datatable(start, end, dam_rate, data_xy, ref 转弯_list);
+            面板_location.get_location(转弯_list, 面板_list, 2.0, 1.0, 12.0, 8.0, 14.0);
         }
 
         private void Form智能设计_Load(object sender, EventArgs e)

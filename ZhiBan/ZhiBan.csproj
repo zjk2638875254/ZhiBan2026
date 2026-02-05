@@ -224,7 +224,6 @@
   <ItemGroup>
     <Compile Include="BaseClass.cs" />
     <Compile Include="BeginFunc_AutoCut.cs" />
-    <Compile Include="BeginFunc_V1.cs" />
     <Compile Include="BentleyGeo.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="DataFile.cs" />
@@ -254,7 +253,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeginFunc.cs" />
     <Compile Include="MyAddin.cs" />
     <Compile Include="OnlyRead.cs" />
     <Compile Include="Pic.Designer.cs">
@@ -265,6 +263,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vector_In_Merge.cs" />
     <Compile Include="面板_Bentley.cs" />
+    <Compile Include="面板_FuncMerge.cs" />
+    <Compile Include="面板_location.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Commands.xml">

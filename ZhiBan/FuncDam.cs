@@ -149,112 +149,6 @@ namespace ZhiBan
         }
         #endregion
 
-        //主程序
-        public static bool main_dam(point line_s, point line_e, double rate_dam, ArrayList xyz, ArrayList para_s, ref ArrayList points_list, ref string output_message)
-        {
-            try
-            {
-                /*
-                if (!convert_xyz(ref line_s, ref line_e, ref xyz))
-                    return false;
-                */
-                double[] dir_se = new double[3] { line_e.x - line_s.x, line_e.y - line_s.y, line_e.z - line_s.z };
-                points_list.Clear();
-                point[] merge_before1 = null;
-                point[] merge_before2 = null;
-                point[] merge_after1 = null;
-                point[] merge_after2 = null;
-                point[] merge_res1 = null;
-                point[] merge_res2 = null;
-                for (int i = 0; i < xyz.Count; i++)
-                {
-                    point[] ps = (point[])xyz[i];
-                    ArrayList temp = new ArrayList();
-                    section_para SecPara = (section_para)para_s[i];
-                    ArrayList independent_sec = new ArrayList();
-                    for (int j = 0; j < ps.Length - 1; j++)
-                    {
-                        double[] test = new double[3] { ps[j + 1].x - ps[j].x, ps[j + 1].y - ps[j].y, ps[j + 1].z - ps[j].z };
-                        unit_vec(ref test);
-                        ArrayList temp_save = new ArrayList();
-                        if (!single_section(dir_se, line_s.z, SecPara, ps[j], ps[j + 1], rate_dam, ref temp_save, ref output_message))
-                            return false;
-                        else
-                        {
-                            for (int t = 0; t < temp_save.Count; t++)
-                            {
-                                point original_p = (point)temp_save[t];
-                                point temp_p = new point(original_p.x, original_p.y, original_p.z);
-                                independent_sec.Add(temp_p);
-                            }
-                        }
-
-                        #region 融合！
-                        if (j == 0)
-                        {
-                            //after初始化
-                            merge_after1 = new point[7];
-                            merge_after2 = new point[7];
-                            for (int t = 0; t < 7; t++)
-                            {
-                                point original_p1 = (point)temp_save[t];
-                                merge_after1[t] = new point(original_p1.x, original_p1.y, original_p1.z);
-
-                                point original_p2 = (point)temp_save[t + 7];
-                                merge_after2[t] = new point(original_p2.x, original_p2.y, original_p2.z);
-                            }
-                            //判断是否启动融合
-                            if (merge_before1 != null && merge_before2 != null)
-                            {
-                                double[] vec_dam = new double[2] { dir_se[0], dir_se[1] };
-                                point base_p = new point((line_s.x + line_e.x) / 2.0, (line_s.y + line_e.y) / 2.0, (line_s.z + line_e.z) / 2.0);
-                                FuncMerge.merge_main(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
-                                ArrayList res = new ArrayList();
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_before2[t]);
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_res1[t]);
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_res1[t]);
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_res2[t]);
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_res2[t]);
-                                for (int t = 0; t < 7; t++)
-                                    res.Add(merge_after1[t]);
-                                points_list.Add(res);
-                            }
-                        }
-
-                        if (j == ps.Length - 2)
-                        {
-                            merge_before1 = new point[7];
-                            merge_before2 = new point[7];
-                            for (int t = 0; t < 7; t++)
-                            {
-                                point original_p1 = (point)temp_save[t];
-                                point temp_p1 = new point(original_p1.x, original_p1.y, original_p1.z);
-                                merge_before1[t] = temp_p1;
-
-                                point original_p2 = (point)temp_save[t + 7];
-                                point temp_p2 = new point(original_p2.x, original_p2.y, original_p2.z);
-                                merge_before2[t] = temp_p2;
-                            }
-                        }
-                        #endregion
-                    }
-                    points_list.Add(independent_sec);
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
         //1月更新-构造单块趾板
         public static bool single_dam(point line_s, point line_e, double rate_dam, point start_p, point end_p, section_para SecPara, ref ArrayList points_list, ref string output_message)
         {
@@ -285,7 +179,10 @@ namespace ZhiBan
                 point base_p = new point((line_s.x + line_e.x) / 2.0, (line_s.y + line_e.y) / 2.0, (line_s.z + line_e.z) / 2.0);
                 point[] merge_res1 = null;
                 point[] merge_res2 = null;
-                FuncMerge.merge_main(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
+                
+                //FuncMerge.merge_main(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
+                面板_FuncMerge.merge_main_precise(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
+
                 points_list.Clear();
                 for (int t = 0; t < 7; t++)
                     points_list.Add(merge_before2[t]);
@@ -474,8 +371,10 @@ namespace ZhiBan
                 double Hxt = z_z + t * rate_xita1 / Math.Sqrt(rate_xita1 * rate_xita1 + 1);
                 double Hqt = Hxt - para.Lad;
                 double Ltbh = Hqt * Math.Tan(xita1) + (para.Lad - para.Lbc) * Math.Tan(xita1);
-                double Ldq = para.Lax + para.Lbx - Hqt / Math.Tan(xita1) - Ltbh;
 
+                double Ldq = para.Lax + para.Lbx - Hqt / Math.Tan(xita1) - Ltbh;
+                Log.write_log("D:\\趾板Test.txt", "xita2:"  + xita2.ToString()+ "\r\n");
+                //double Ldq = para.Lax + para.Lbx - Hqt / Math.Tan(xita2) - Ltbh;
 
                 double point_t_z = z_all + t * rate_xita1 / Math.Sqrt(1 + rate_xita1 * rate_xita1);
                 double Lxg_s = (para.Lbx + Lbe) - (point_t_z - x_point.z) / rate_xita1;
@@ -483,13 +382,15 @@ namespace ZhiBan
 
                 point Ts = new point(0, 0, point_t_z);
                 //double Ldq = rate_xita1 * (point_t_z - x_point.z - para.Lad);
-                double Lqt = Hqt * Math.Tan(xita1);
+                //double Lqt = Hqt * Math.Tan(xita1);
+                double Lqt = Hqt / Math.Tan(xita1);
                 double Htq = Hxt - para.Lad;
 
                 double[] v_se = new double[3] { start_end[0], start_end[1], start_end[2] };
                 unit_vec(ref v_se);
                 double[] dir_ab = get_cz_vec(v_se, base_p, test_p);
                 unit_vec(ref dir_ab);
+
                 double[] v_ad = get_vec(v_se, dir_ab);
 
                 if (v_ad[2] < 0)
@@ -518,6 +419,7 @@ namespace ZhiBan
         {
             //v_ab[0] = (-1) * v_ab[0];
             //v_ab[1] = (-1) * v_ab[1];
+            Log.write_log("D://output.txt", "Lqt:" + Lqt.ToString() + " * " + "Hqt:" + Hqt.ToString() + "\r\n");
             point As = new point(x_point.x + v_ab[0] * para.Lax, x_point.y + v_ab[1] * para.Lax, x_point.z + v_ab[2] * para.Lax);
             point Bs = new point(x_point.x - v_ab[0] * para.Lbx, x_point.y - v_ab[1] * para.Lbx, x_point.z - v_ab[2] * para.Lbx);
             point Cs = new point(Bs.x + v_ad[0] * para.Lbc, Bs.y + v_ad[1] * para.Lbc, Bs.z + v_ad[2] * para.Lbc);

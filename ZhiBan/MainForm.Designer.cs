@@ -30,6 +30,9 @@ namespace ZhiBan
         private void InitializeComponent()
         {
             this.groupBoxMain = new System.Windows.Forms.GroupBox();
+            this.RadioPanel = new System.Windows.Forms.Panel();
+            this.DirABTrue = new System.Windows.Forms.RadioButton();
+            this.DirABFalse = new System.Windows.Forms.RadioButton();
             this.end_z = new System.Windows.Forms.NumericUpDown();
             this.end_y = new System.Windows.Forms.NumericUpDown();
             this.end_x = new System.Windows.Forms.NumericUpDown();
@@ -69,11 +72,10 @@ namespace ZhiBan
             this.分块调整ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.按板长建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DirABTrue = new System.Windows.Forms.RadioButton();
-            this.DirABFalse = new System.Windows.Forms.RadioButton();
-            this.RadioPanel = new System.Windows.Forms.Panel();
             this.测试按板长建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入坝轴线坐标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxMain.SuspendLayout();
+            this.RadioPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.end_z)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_x)).BeginInit();
@@ -83,7 +85,6 @@ namespace ZhiBan
             ((System.ComponentModel.ISupportInitialize)(this.data__paras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_xys)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.RadioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxMain
@@ -115,6 +116,37 @@ namespace ZhiBan
             this.groupBoxMain.TabIndex = 24;
             this.groupBoxMain.TabStop = false;
             this.groupBoxMain.Text = "参数化趾板建模-数学计算系统-V1.2";
+            // 
+            // RadioPanel
+            // 
+            this.RadioPanel.Controls.Add(this.DirABTrue);
+            this.RadioPanel.Controls.Add(this.DirABFalse);
+            this.RadioPanel.Location = new System.Drawing.Point(10, 274);
+            this.RadioPanel.Name = "RadioPanel";
+            this.RadioPanel.Size = new System.Drawing.Size(293, 35);
+            this.RadioPanel.TabIndex = 46;
+            // 
+            // DirABTrue
+            // 
+            this.DirABTrue.AutoSize = true;
+            this.DirABTrue.Location = new System.Drawing.Point(3, 4);
+            this.DirABTrue.Name = "DirABTrue";
+            this.DirABTrue.Size = new System.Drawing.Size(112, 25);
+            this.DirABTrue.TabIndex = 44;
+            this.DirABTrue.TabStop = true;
+            this.DirABTrue.Text = "坝轴正向";
+            this.DirABTrue.UseVisualStyleBackColor = true;
+            // 
+            // DirABFalse
+            // 
+            this.DirABFalse.AutoSize = true;
+            this.DirABFalse.Location = new System.Drawing.Point(173, 4);
+            this.DirABFalse.Name = "DirABFalse";
+            this.DirABFalse.Size = new System.Drawing.Size(112, 25);
+            this.DirABFalse.TabIndex = 45;
+            this.DirABFalse.TabStop = true;
+            this.DirABFalse.Text = "坝轴反向";
+            this.DirABFalse.UseVisualStyleBackColor = true;
             // 
             // end_z
             // 
@@ -386,7 +418,8 @@ namespace ZhiBan
             // 
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.导入X线坐标ToolStripMenuItem,
-            this.导入体型参数ToolStripMenuItem});
+            this.导入体型参数ToolStripMenuItem,
+            this.导入坝轴线坐标ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.文件ToolStripMenuItem.Text = "文件";
@@ -394,14 +427,14 @@ namespace ZhiBan
             // 导入X线坐标ToolStripMenuItem
             // 
             this.导入X线坐标ToolStripMenuItem.Name = "导入X线坐标ToolStripMenuItem";
-            this.导入X线坐标ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.导入X线坐标ToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.导入X线坐标ToolStripMenuItem.Text = "导入X线坐标";
             this.导入X线坐标ToolStripMenuItem.Click += new System.EventHandler(this.导入X线坐标ToolStripMenuItem_Click);
             // 
             // 导入体型参数ToolStripMenuItem
             // 
             this.导入体型参数ToolStripMenuItem.Name = "导入体型参数ToolStripMenuItem";
-            this.导入体型参数ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.导入体型参数ToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.导入体型参数ToolStripMenuItem.Text = "导入体型参数";
             this.导入体型参数ToolStripMenuItem.Click += new System.EventHandler(this.导入体型参数ToolStripMenuItem_Click);
             // 
@@ -494,43 +527,19 @@ namespace ZhiBan
             this.帮助ToolStripMenuItem.Text = "帮助";
             this.帮助ToolStripMenuItem.Click += new System.EventHandler(this.帮助ToolStripMenuItem_Click);
             // 
-            // DirABTrue
-            // 
-            this.DirABTrue.AutoSize = true;
-            this.DirABTrue.Location = new System.Drawing.Point(3, 4);
-            this.DirABTrue.Name = "DirABTrue";
-            this.DirABTrue.Size = new System.Drawing.Size(112, 25);
-            this.DirABTrue.TabIndex = 44;
-            this.DirABTrue.TabStop = true;
-            this.DirABTrue.Text = "坝轴正向";
-            this.DirABTrue.UseVisualStyleBackColor = true;
-            // 
-            // DirABFalse
-            // 
-            this.DirABFalse.AutoSize = true;
-            this.DirABFalse.Location = new System.Drawing.Point(173, 4);
-            this.DirABFalse.Name = "DirABFalse";
-            this.DirABFalse.Size = new System.Drawing.Size(112, 25);
-            this.DirABFalse.TabIndex = 45;
-            this.DirABFalse.TabStop = true;
-            this.DirABFalse.Text = "坝轴反向";
-            this.DirABFalse.UseVisualStyleBackColor = true;
-            // 
-            // RadioPanel
-            // 
-            this.RadioPanel.Controls.Add(this.DirABTrue);
-            this.RadioPanel.Controls.Add(this.DirABFalse);
-            this.RadioPanel.Location = new System.Drawing.Point(10, 274);
-            this.RadioPanel.Name = "RadioPanel";
-            this.RadioPanel.Size = new System.Drawing.Size(293, 35);
-            this.RadioPanel.TabIndex = 46;
-            // 
             // 测试按板长建模ToolStripMenuItem
             // 
             this.测试按板长建模ToolStripMenuItem.Name = "测试按板长建模ToolStripMenuItem";
             this.测试按板长建模ToolStripMenuItem.Size = new System.Drawing.Size(147, 20);
             this.测试按板长建模ToolStripMenuItem.Text = "测试-按板长建模";
             this.测试按板长建模ToolStripMenuItem.Click += new System.EventHandler(this.测试按板长建模ToolStripMenuItem_Click);
+            // 
+            // 导入坝轴线坐标ToolStripMenuItem
+            // 
+            this.导入坝轴线坐标ToolStripMenuItem.Name = "导入坝轴线坐标ToolStripMenuItem";
+            this.导入坝轴线坐标ToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.导入坝轴线坐标ToolStripMenuItem.Text = "导入坝轴线坐标";
+            this.导入坝轴线坐标ToolStripMenuItem.Click += new System.EventHandler(this.导入坝轴线坐标ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -547,6 +556,8 @@ namespace ZhiBan
             this.Load += new System.EventHandler(this.Show_Load);
             this.groupBoxMain.ResumeLayout(false);
             this.groupBoxMain.PerformLayout();
+            this.RadioPanel.ResumeLayout(false);
+            this.RadioPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.end_z)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_x)).EndInit();
@@ -557,8 +568,6 @@ namespace ZhiBan
             ((System.ComponentModel.ISupportInitialize)(this.data_xys)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.RadioPanel.ResumeLayout(false);
-            this.RadioPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +619,6 @@ namespace ZhiBan
         private System.Windows.Forms.RadioButton DirABTrue;
         private System.Windows.Forms.Panel RadioPanel;
         private System.Windows.Forms.ToolStripMenuItem 测试按板长建模ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导入坝轴线坐标ToolStripMenuItem;
     }
 }

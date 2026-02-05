@@ -195,34 +195,58 @@ namespace ZhiBan
 
         public static void test_mianban(ArrayList points)
         {
+            //XZTZT
             DgnModel dgnModel = Session.Instance.GetActiveDgnModel();
             for (int i = 0; i < points.Count; i++)
             {
                 point[] pos = (point[])points[i];
-                DPoint3d p1 = new DPoint3d(pos[0].x * meter_rate, pos[0].y * meter_rate, pos[0].z * meter_rate);
-                DPoint3d p2 = new DPoint3d(pos[1].x * meter_rate, pos[1].y * meter_rate, pos[1].z * meter_rate);
+                DPoint3d p1 = new DPoint3d(pos[1].x * meter_rate, pos[1].y * meter_rate, pos[1].z * meter_rate);
+                DPoint3d p2 = new DPoint3d(pos[2].x * meter_rate, pos[2].y * meter_rate, pos[2].z * meter_rate);
                 DSegment3d seg1 = new DSegment3d(p1, p2);
                 LineElement line1 = new LineElement(dgnModel, null, seg1);
                 line1.AddToModel();
 
-                p1 = new DPoint3d(pos[1].x * meter_rate, pos[1].y * meter_rate, pos[1].z * meter_rate);
-                p2 = new DPoint3d(pos[2].x * meter_rate, pos[2].y * meter_rate, pos[2].z * meter_rate);
+                p1 = new DPoint3d(pos[2].x * meter_rate, pos[2].y * meter_rate, pos[2].z * meter_rate);
+                p2 = new DPoint3d(pos[4].x * meter_rate, pos[4].y * meter_rate, pos[4].z * meter_rate);
                 DSegment3d seg2 = new DSegment3d(p1, p2);
                 LineElement line2 = new LineElement(dgnModel, null, seg2);
                 line2.AddToModel();
 
-                p1 = new DPoint3d(pos[2].x * meter_rate, pos[2].y * meter_rate, pos[2].z * meter_rate);
+                p1 = new DPoint3d(pos[4].x * meter_rate, pos[4].y * meter_rate, pos[4].z * meter_rate);
                 p2 = new DPoint3d(pos[3].x * meter_rate, pos[3].y * meter_rate, pos[3].z * meter_rate);
                 DSegment3d seg3 = new DSegment3d(p1, p2);
                 LineElement line3 = new LineElement(dgnModel, null, seg3);
                 line3.AddToModel();
 
                 p1 = new DPoint3d(pos[3].x * meter_rate, pos[3].y * meter_rate, pos[3].z * meter_rate);
-                p2 = new DPoint3d(pos[0].x * meter_rate, pos[0].y * meter_rate, pos[0].z * meter_rate);
+                p2 = new DPoint3d(pos[1].x * meter_rate, pos[1].y * meter_rate, pos[1].z * meter_rate);
                 DSegment3d seg4 = new DSegment3d(p1, p2);
                 LineElement line4 = new LineElement(dgnModel, null, seg4);
                 line4.AddToModel();
             }
+        }
+
+        public static void test_mianban_转角(ArrayList points)
+        {
+            DgnModel dgnModel = Session.Instance.GetActiveDgnModel();
+            point p_start = (point)points[0];
+            point p_end = (point)points[1];
+            DPoint3d p1 = new DPoint3d(p_start.x * meter_rate, p_start.y * meter_rate, p_start.z * meter_rate);
+            DPoint3d p2 = new DPoint3d(p_end.x * meter_rate, p_end.y * meter_rate, p_end.z * meter_rate);
+            DSegment3d seg1 = new DSegment3d(p1, p2);
+            LineElement line1 = new LineElement(dgnModel, null, seg1);
+            line1.AddToModel();
+
+            p_start = (point)points[2];
+            p_end = (point)points[3];
+            p1 = new DPoint3d(p_start.x * meter_rate, p_start.y * meter_rate, p_start.z * meter_rate);
+            p2 = new DPoint3d(p_end.x * meter_rate, p_end.y * meter_rate, p_end.z * meter_rate);
+            DSegment3d seg2 = new DSegment3d(p1, p2);
+            LineElement line2 = new LineElement(dgnModel, null, seg2);
+            line2.AddToModel();
+            Log.write_log("D://test.txt", p_start.x.ToString() + "***" + p_start.y.ToString() + "***" + p_start.z.ToString() + "\r\n");
+            Log.write_log("D://test.txt", p_end.x.ToString() + "***" + p_end.y.ToString() + "***" + p_end.z.ToString() + "\r\n");
+            Log.write_log("D://test.txt", "\r\n");
         }
     }
 }

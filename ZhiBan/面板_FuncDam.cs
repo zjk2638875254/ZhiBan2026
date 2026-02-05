@@ -98,8 +98,10 @@ namespace ZhiBan
             //results.Add(Ds)
             results[1] = Ts;
             //results.Add(Qs);
-            //results.Add(Xs);
+            results[2] = Xs;
         }
+
+
         private static bool calculate_math(point line_s, point line_e, double[] start_end, double line_z, section_para para, double rate_dam, point[] high_point, ref ArrayList results, ref string output_message, point base_p, point test_p)
         {
             try
@@ -107,7 +109,7 @@ namespace ZhiBan
                 double[] base_dir = new double[3] { line_e.x - line_s.x, line_e.y - line_s.y, line_e.z - line_s.z };
                 //double mod_se = Math.Sqrt(start_end[0] * start_end[0] + start_end[1] * start_end[1]);
                 //double[] se_xy = new double[2] { -1 * start_end[1] / mod_se, start_end[0] / mod_se };
-                point[] 面板_p_list = new point[4];
+                point[] 面板_p_list = new point[5];
 
                 //真倾角假倾角
                 double math1 = base_dir[0] * start_end[0] + base_dir[1] * start_end[1];
@@ -161,7 +163,7 @@ namespace ZhiBan
 
                 point Ts = new point(0, 0, point_t_z);
                 //double Ldq = rate_xita1 * (point_t_z - x_point.z - para.Lad);
-                double Lqt = Hqt * Math.Tan(xita1);
+                double Lqt = Hqt / Math.Tan(xita1);
                 double Htq = Hxt - para.Lad;
 
                 double[] v_se = new double[3] { start_end[0], start_end[1], start_end[2] };
@@ -181,14 +183,23 @@ namespace ZhiBan
                 }
                 
                 calculate_points(high_point[1], v_se, dir_ab, v_ad, para, Lqt, Hqt, Ldq, ref 面板_p_list);
-                point p_low1 = 面板_p_list[0];
-                point p_low2 = 面板_p_list[1];
 
-                double p_low_len = Math.Sqrt((p_low1.x - p_low2.x) * (p_low1.x - p_low2.x) + (p_low1.y - p_low2.y) * (p_low1.y - p_low2.y) + (p_low1.z - p_low2.z) * (p_low1.z - p_low2.z));
-                point p_high2 = new point(high_point[0].x + para.T / p_low_len * (p_low2.x - p_low1.x), high_point[0].y + para.T / p_low_len * (p_low2.y - p_low1.y), high_point[0].z + para.T / p_low_len * (p_low2.z - p_low1.z));
-                面板_p_list[2] = p_high2;
+                //ZTX重置为XZT
+                point px = new point(面板_p_list[2].x, 面板_p_list[2].y, 面板_p_list[2].z);
+                point pz = new point(面板_p_list[0].x, 面板_p_list[0].y, 面板_p_list[0].z);
+                point pt = new point(面板_p_list[1].x, 面板_p_list[1].y, 面板_p_list[1].z);
+
+                point p_low_z = 面板_p_list[0];
+                point p_low_t = 面板_p_list[1];
+
+                double p_low_len = Math.Sqrt((p_low_t.x - p_low_z.x) * (p_low_t.x - p_low_z.x) + (p_low_t.y - p_low_z.y) * (p_low_t.y - p_low_z.y) + (p_low_t.z - p_low_z.z) * (p_low_t.z - p_low_z.z));
+                point p_high_t = new point(high_point[0].x + para.T / p_low_len * (p_low_t.x - p_low_z.x), high_point[0].y + para.T / p_low_len * (p_low_t.y - p_low_z.y), high_point[0].z + para.T / p_low_len * (p_low_t.z - p_low_z.z));
+
+                面板_p_list[0] = px;
+                面板_p_list[1] = pz;
+                面板_p_list[2] = pt;
                 面板_p_list[3] = high_point[0];
-
+                面板_p_list[4] = p_high_t;
                 results.Add(面板_p_list);
                 return true;
             }
@@ -298,13 +309,13 @@ namespace ZhiBan
             try
             {
                 int id_start = 0, id_end = 0;
-                /*
-                Log.write_log("D:\\趾板Log.txt", "all_len:" + all_len.ToString() + "\r\n");
-                for(int i=0;i<lens.Length;i++)
-                    Log.write_log("D:\\趾板Log.txt", "len[" + i.ToString() + "]:" + lens[i].ToString() + "\r\n");
-                Log.write_log("D:\\趾板Log.txt", "all_len:" + all_len.ToString() + "    lens[id_start]:" + lens[id_start].ToString() + "\r\n");
-                Log.write_log("D:\\趾板Log.txt", "id_start:" + id_start.ToString() + "    lens.Count():" + lens.Count().ToString() + "\r\n");
-                */
+                
+                Log.write_log("D:\\test.txt", "all_len:" + all_len.ToString() + "\r\n");
+                for (int i = 0; i < lens.Length; i++)
+                    Log.write_log("D:\\test.txt", "len[" + i.ToString() + "]:" + lens[i].ToString() + "\r\n");
+                Log.write_log("D:\\test.txt", "len:" + len.ToString() + "    lens[id_start]:" + lens[id_start].ToString() + "\r\n");
+                Log.write_log("D:\\test.txt", "id_start:" + id_start.ToString() + "    lens.Count():" + lens.Count().ToString() + "\r\n");
+                
                 while (id_start < lens.Count() && all_len >= lens[id_start])
                     id_start++;
                 while (id_end < lens.Count() && all_len + len >= lens[id_end])
@@ -375,7 +386,7 @@ namespace ZhiBan
             }
         }
 
-        public static void auto_draw(ArrayList point_list, ArrayList mianban_high, ArrayList para_list, point start, point end, double dam_rate, ref string para_output_message)
+        private static void auto_draw(ArrayList point_list, ArrayList mianban_high, ArrayList if_merge, ArrayList para_list, point start, point end, double dam_rate, ref string para_output_message)
         {
             try
             {
@@ -385,23 +396,56 @@ namespace ZhiBan
                     return;
                 }
                 ArrayList pos = new ArrayList();
-                for (int i = 0; i < mianban_high.Count - 1; i++)
+                for (int i = 1; i < mianban_high.Count - 1; i++)
                 {
                     pos.Clear();
-                    string res_message = "";
-                    point[] section_points_start = (point[])mianban_high[i];
-                    point[] section_points_end = (point[])mianban_high[i + 1];
-                    section_para sec_para = (section_para)para_list[i];
-                    single_面板(start, end, dam_rate, section_points_start, section_points_end, sec_para, ref pos, ref res_message);
-                    /*
-                    Log.write_log("D:\\趾板Log.txt", pos.Count + "\r\n");
-                    for (int j = 0; j < pos.Count; j++)
-                        Log.write_log("D:\\趾板Log.txt", ((point)pos[j]).ToString() + "\r\n");
-                    Log.write_log("D:\\趾板Log.txt", "-------------------\r\n");
-                    */
-                    para_output_message += res_message;
-                    Log.write_log("D:\\趾板Log.txt", "begin geo：" + "\r\n");
-                    面板_Bentley.test_mianban(pos);
+                    if (!((bool)if_merge[i]))
+                    {
+                        pos.Clear();
+                        Log.write_log("D:\\test.txt", "not merge:" + i.ToString() + "\r\n");
+                        string res_message = "";
+                        point[] section_points_start = (point[])mianban_high[i - 1];
+                        point[] section_points_end = (point[])mianban_high[i];
+                        section_para sec_para = (section_para)para_list[i];
+                        single_面板(start, end, dam_rate, section_points_start, section_points_end, sec_para, ref pos, ref res_message);
+                        para_output_message += res_message;
+                        Log.write_log("D:\\趾板Log.txt", "begin geo：" + "\r\n");
+                        面板_Bentley.test_mianban(pos);
+                        para_output_message += res_message;
+                    }
+                    else
+                    {
+                        pos.Clear();
+                        Log.write_log("D:\\test.txt", "merge:" + i.ToString() + "\r\n");
+                        
+                        point[] section_points_start_before = (point[])mianban_high[i - 2];
+                        point[] section_points_end_before = (point[])mianban_high[i - 1];
+                        section_para sec_para_before = (section_para)para_list[i - 2];
+                        point[] section_points_start_after = (point[])mianban_high[i];
+                        point[] section_points_end_after = (point[])mianban_high[i + 1];
+                        section_para sec_para_after = (section_para)para_list[i];
+
+                        
+                        ArrayList pos_before = new ArrayList();
+                        string res_message_before = "";
+                        ArrayList pos_after = new ArrayList();
+                        string res_message_after = "";
+
+                        single_面板(start, end, dam_rate, section_points_start_before, section_points_end_before, sec_para_before, ref pos_before, ref res_message_before);
+                        para_output_message += res_message_before;
+                        single_面板(start, end, dam_rate, section_points_start_after, section_points_end_after, sec_para_after, ref pos_after, ref res_message_after);
+                        para_output_message += res_message_after;
+                        Log.write_log("D:\\趾板Log.txt", "merge 面板：" + "\r\n" + para_output_message);
+                        //面板_Bentley.test_mianban(pos);
+                        point[] before1, before2, after1, after2;
+                        before1 = (point[])pos_before[0];
+                        before2 = (point[])pos_before[1];
+                        after1 = (point[])pos_after[0];
+                        after2 = (point[])pos_after[1];
+                        面板_FuncMerge.merge_dam(before1, before2, after1, after2, ref pos);
+                        面板_Bentley.test_mianban_转角(pos);
+                        
+                    }
                 }
                 /*
                 for (int i = 0; i < pos.Count; i++)
@@ -429,7 +473,7 @@ namespace ZhiBan
                 ArrayList if_merge = new ArrayList();
                 cut_para(xys, paras, start, end, dam_rate, ref point_list, ref para_list, ref if_merge);
 
-                auto_draw(point_list, 面板_plist, para_list, start, end, dam_rate, ref para_output_message);
+                auto_draw(point_list, 面板_plist, if_merge, para_list, start, end, dam_rate, ref para_output_message);
                 return true;
             }
             catch (Exception ex)
@@ -439,5 +483,6 @@ namespace ZhiBan
             }
         }
 
+        
     }
 }

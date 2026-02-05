@@ -118,7 +118,6 @@ namespace ZhiBan
 
         }
 
-
         private static point section_point(point section_begin, point section_end, double len)
         {
             double[] dir = new double[3] { section_end.x - section_begin.x, section_end.y - section_begin.y, section_end.z - section_begin.z };
@@ -131,6 +130,7 @@ namespace ZhiBan
         {
             try
             {
+                //MessageBox.Show(point_list.Count.ToString());
                 if (point_list.Count != point_list.Count || point_list.Count != if_merge.Count)
                 {
                     MessageBox.Show("长度不等!");
@@ -200,7 +200,6 @@ namespace ZhiBan
             }
         }
        
-
         #region 初始化Excel数据
         //使用DataTable读入xy点坐标
         private static void init_xy(DataTable data_xy, ref ArrayList xy)
@@ -282,100 +281,6 @@ namespace ZhiBan
                 return false;
             }
         }
-
-
-        //2026年重构-----增加bool判断方向
-        public static bool _init_(DataTable data_xy, DataTable data_para, point start, point end, double dam_rate, bool if_direction_ab_reverse, ref string para_output_message)
-        {
-            try
-            {
-                ArrayList paras = new ArrayList();
-                init_para(data_para, ref paras);
-                ArrayList xys = new ArrayList();
-                init_xy(data_xy, ref xys);
-
-                ArrayList point_list = new ArrayList();
-                ArrayList para_list = new ArrayList();
-                ArrayList if_merge = new ArrayList();
-                cut_para(xys, paras, start, end, dam_rate, ref point_list, ref para_list, ref if_merge);
-
-                auto_draw(point_list, para_list, if_merge, start, end, dam_rate, if_direction_ab_reverse, ref para_output_message);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-        public static void auto_draw(ArrayList point_list, ArrayList para_list, ArrayList if_merge, point start, point end, double dam_rate, bool if_direction_ab_reverse, ref string para_output_message)
-        {
-            try
-            {
-                if (point_list.Count != point_list.Count || point_list.Count != if_merge.Count)
-                {
-                    MessageBox.Show("长度不等!");
-                    return;
-                }
-                ArrayList pos = new ArrayList { };
-                for (int i = 0; i < point_list.Count; i++)
-                {
-                    pos.Clear();
-                    if (!((bool)if_merge[i]))
-                    {
-                        string res_message = "";
-                        point[] section_points = (point[])point_list[i];
-                        section_para sec_para = (section_para)para_list[i];
-                        FuncDam.single_dam(start, end, dam_rate, section_points[0], section_points[1], sec_para, if_direction_ab_reverse, ref pos, ref res_message);
-                        para_output_message += res_message;
-                    }
-                    else
-                    {
-                        point[] section_points_before = (point[])point_list[i - 1];
-                        section_para sec_para_before = (section_para)para_list[i - 1];
-                        point[] section_points_after = (point[])point_list[i + 1];
-                        section_para sec_para_after = (section_para)para_list[i + 1];
-                        ArrayList pos_before = new ArrayList { };
-                        string res_message_before = "";
-                        ArrayList pos_after = new ArrayList { };
-                        string res_message_after = "";
-                        FuncDam.single_dam(start, end, dam_rate, section_points_before[0], section_points_before[1], sec_para_before, if_direction_ab_reverse, ref pos_before, ref res_message_before);
-                        FuncDam.single_dam(start, end, dam_rate, section_points_after[0], section_points_after[1], sec_para_after, if_direction_ab_reverse, ref pos_after, ref res_message_after);
-                        point[] before1 = new point[7];
-                        for (int j = 0; j < 7; j++)
-                            before1[j] = (point)pos_before[j];
-                        point[] before2 = new point[7];
-                        for (int j = 0; j < 7; j++)
-                            before2[j] = (point)pos_before[j + 7];
-                        point[] after1 = new point[7];
-                        for (int j = 0; j < 7; j++)
-                            after1[j] = (point)pos_after[j];
-                        point[] after2 = new point[7];
-                        for (int j = 0; j < 7; j++)
-                            after2[j] = (point)pos_after[j + 7];
-                        /*
-                        Log.write_log("D:\\趾板Log.txt", pos_before.Count + "\r\n");
-                        for (int j = 0; j < pos_before.Count; j++)
-                            Log.write_log("D:\\趾板Log.txt", ((point)pos_before[j]).x.ToString() + "\r\n");
-                        Log.write_log("D:\\趾板Log.txt", "-------------------\r\n");
-                        Log.write_log("D:\\趾板Log.txt", pos_after.Count + "\r\n");
-                        for (int j = 0; j < pos_after.Count; j++)
-                            Log.write_log("D:\\趾板Log.txt", ((point)pos_after[j]).x.ToString() + "\r\n");
-                        Log.write_log("D:\\趾板Log.txt", "-------------------\r\n");
-                        */
-                        FuncDam.merge_dam(start, end, before1, before2, after1, after2, ref pos);
-                    }
-                    Log.write_log("D:\\趾板Log.txt", "begin geo：" + "\r\n");
-                    BentleyGeo.make_geo_single(pos);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "警告5");
-            }
-        }
-
 
     }
 }

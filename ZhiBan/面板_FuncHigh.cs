@@ -201,5 +201,48 @@ namespace ZhiBan
                 return false;
             }
         }
+
+        public static bool get_len_面板(point px, point ps, point pe, double rate_dam, DataTable p_xy, ref double len)
+        {
+            try
+            {
+                ArrayList xys = new ArrayList();
+                init_xy(p_xy, ref xys);
+                point[] p_list = new point[xys.Count];
+                get_z_by_xy(ps, pe, rate_dam, xys, ref p_list);
+
+                double all_len = 0;
+                double[] lens = new double[p_list.Length];
+                lens[0] = 0;
+                for (int i = 1; i < p_list.Length; i++)
+                {
+                    all_len += Math.Sqrt((p_list[i].x - p_list[i - 1].x) * (p_list[i].x - p_list[i - 1].x) + (p_list[i].y - p_list[i - 1].y) * (p_list[i].y - p_list[i - 1].y) + (p_list[i].z - p_list[i - 1].z) * (p_list[i].z - p_list[i - 1].z));
+                    lens[i] = all_len;
+                }
+                //如果两侧异号则在区间内
+                for (int i = 0; i < p_list.Length; i++)
+                {
+                    if (p_list[i].x == px.x)
+                    {
+                        len = lens[i];
+                        return true;
+                    }
+                }
+                for (int i = 0; i < p_list.Length; i++)
+                {
+                    if ((p_list[i].x - px.x) * (p_list[i + 1].x - px.x) < 0)
+                    {
+                        len = lens[i] + Math.Sqrt((p_list[i].x - px.x) * (p_list[i].x - px.x) + (p_list[i].y - px.y) * (p_list[i].y - px.y) + (p_list[i].z - px.z) * (p_list[i].z - px.z));
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
     }
 }
