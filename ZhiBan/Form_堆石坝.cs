@@ -16,6 +16,15 @@ namespace ZhiBan
         public Form_堆石坝()
         {
             InitializeComponent();
+            rate_dam_input.Items.Add("0.8");
+            rate_dam_input.Items.Add("0.9");
+            rate_dam_input.Items.Add("1.0");
+            rate_dam_input.Items.Add("1.1");
+            rate_dam_input.Items.Add("1.2");
+            rate_dam_input.Items.Add("1.3");
+            rate_dam_input.Items.Add("1.4");
+            rate_dam_input.Items.Add("1.5");
+            rate_dam_input.Items.Add("1.6");
         }
 
         public delegate void RefreshEvent(string name, object value);
@@ -30,6 +39,14 @@ namespace ZhiBan
             data_xys.DataSource = dt;
             data_xys.ReadOnly = true;
             refresh("TableX", data_xy);
+
+            //测试好看
+            start_x.Value = 4813028.382M;
+            start_y.Value = 43379979.896M;
+            start_z.Value = 836M;
+            end_x.Value = 4813212.294M;
+            end_y.Value = 43380652.147M;
+            end_z.Value = 836M;
         }
 
         private void point_ValueChanged(object sender, EventArgs e)

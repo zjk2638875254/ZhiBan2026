@@ -14,10 +14,10 @@ namespace ZhiBan
 {
     public partial class Form_V3: Form
     {
-        Form_堆石坝 f堆石坝;
-        Form_绘图 f绘图;
-        Form_面板 f面板;
-        Form_趾板 f趾板;
+        Form_堆石坝 f堆石坝 = new Form_堆石坝();
+        Form_绘图 f绘图 = new Form_绘图();
+        Form_面板 f面板 = new Form_面板();
+        Form_趾板 f趾板 = new Form_趾板();
 
         #region 必要的参数
         public static DataTable data_x;
@@ -34,6 +34,11 @@ namespace ZhiBan
             x = 1000;
             y = 450;
             setTag(this);
+
+            f堆石坝.TopLevel = false;
+            f绘图.TopLevel = false;
+            f面板.TopLevel = false;
+            f趾板.TopLevel = false;
         }
 
         #region 自动调整窗体
@@ -164,6 +169,10 @@ namespace ZhiBan
 
                 case "DamRate":
                     dam_rate = (double)value;
+                    break;
+
+                case "MianBanArray":
+                    面板_location = (ArrayList)value;
                     break;
             }
         }

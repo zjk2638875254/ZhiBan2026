@@ -23,6 +23,13 @@ namespace ZhiBan
             //MessageBox.Show("Success");
         }
 
+        public static void MainFormV3(string unparsed)
+        {
+            Form_V3 F = new Form_V3();
+            F.Show();
+            //MessageBox.Show("Success");
+        }
+
         public static void LoginForm(string unparsed)
         {
             LoginForm MF = new LoginForm();

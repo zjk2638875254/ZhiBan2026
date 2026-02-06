@@ -44,12 +44,14 @@ namespace ZhiBan
             ArrayList mianban_high_list = new ArrayList();
             面板_FuncHigh.get_location(data_xy, start, end, dam_rate, len_list, ref mianban_high_list);
             //返回
-            refresh("TableX", mianban_high_list);
+            refresh("MianBanArray", mianban_high_list);
             string message = "";
             for (int i = 0; i < mianban_high_list.Count; i++)
             {
-                message += "第" + i.ToString() + "段面板与X线交点的坐标为：" + 
+                point[] list = (point[])mianban_high_list[i];
+                message += "第" + i.ToString() + "个面板分界点坐标为：(" + list[0].x.ToString() + "," + list[0].y.ToString() + "," + list[0].z.ToString() + ")\r\n";
             }
+            TextBox.Text = message;
             面板_Bentley.test_high(mianban_high_list);
         }
     }

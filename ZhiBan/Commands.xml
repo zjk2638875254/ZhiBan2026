@@ -18,6 +18,7 @@
           <Keyword CommandWord="MainForm" />
           <Keyword CommandWord="LoginForm" />
           <Keyword CommandWord="AutoForm" />
+          <Keyword CommandWord="MainFormV3" />
         </KeyinTable>
 
     </SubKeyinTables>
@@ -26,6 +27,7 @@
         <KeyinHandler Keyin="Output Words MainForm"            Function="ZhiBan.Commands.MainForm"/>
         <KeyinHandler Keyin="Output Words LoginForm"            Function="ZhiBan.Commands.LoginForm"/>
         <KeyinHandler Keyin="Output Words AutoForm"            Function="ZhiBan.Commands.AutoForm"/>
+        <KeyinHandler Keyin="Output Words MainFormV3"            Function="ZhiBan.Commands.MainFormV3"/>
     </KeyinHandlers>
 
 </KeyinTree>
