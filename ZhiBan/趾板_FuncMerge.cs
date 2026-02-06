@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ZhiBan
 {
-    class FuncMerge
+    class 趾板_FuncMerge
     {
         public static bool merge_main(point[] sur1_1, point[] sur1_2, point[] sur2_1, point[] sur2_2, double[] dam_dir, point base_point, ref point[] sur1, ref point[] sur2)
         {

@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RadioPanel = new System.Windows.Forms.Panel();
-            this.DirABTrue = new System.Windows.Forms.RadioButton();
-            this.DirABFalse = new System.Windows.Forms.RadioButton();
             this.end_z = new System.Windows.Forms.NumericUpDown();
             this.end_y = new System.Windows.Forms.NumericUpDown();
             this.end_x = new System.Windows.Forms.NumericUpDown();
@@ -122,7 +119,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.面板Len3 = new System.Windows.Forms.NumericUpDown();
             this.label42 = new System.Windows.Forms.Label();
-            this.RadioPanel.SuspendLayout();
+            this.不同类型的趾板LbcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.end_z)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_x)).BeginInit();
@@ -160,37 +157,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.面板Num3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.面板Len3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RadioPanel
-            // 
-            this.RadioPanel.Controls.Add(this.DirABTrue);
-            this.RadioPanel.Controls.Add(this.DirABFalse);
-            this.RadioPanel.Location = new System.Drawing.Point(17, 276);
-            this.RadioPanel.Name = "RadioPanel";
-            this.RadioPanel.Size = new System.Drawing.Size(293, 35);
-            this.RadioPanel.TabIndex = 66;
-            // 
-            // DirABTrue
-            // 
-            this.DirABTrue.AutoSize = true;
-            this.DirABTrue.Location = new System.Drawing.Point(3, 4);
-            this.DirABTrue.Name = "DirABTrue";
-            this.DirABTrue.Size = new System.Drawing.Size(104, 25);
-            this.DirABTrue.TabIndex = 44;
-            this.DirABTrue.TabStop = true;
-            this.DirABTrue.Text = "坝轴正向";
-            this.DirABTrue.UseVisualStyleBackColor = true;
-            // 
-            // DirABFalse
-            // 
-            this.DirABFalse.AutoSize = true;
-            this.DirABFalse.Location = new System.Drawing.Point(173, 4);
-            this.DirABFalse.Name = "DirABFalse";
-            this.DirABFalse.Size = new System.Drawing.Size(104, 25);
-            this.DirABFalse.TabIndex = 45;
-            this.DirABFalse.TabStop = true;
-            this.DirABFalse.Text = "坝轴反向";
-            this.DirABFalse.UseVisualStyleBackColor = true;
             // 
             // end_z
             // 
@@ -298,7 +264,7 @@
             this.data_xys.Location = new System.Drawing.Point(318, 26);
             this.data_xys.Name = "data_xys";
             this.data_xys.RowTemplate.Height = 23;
-            this.data_xys.Size = new System.Drawing.Size(311, 285);
+            this.data_xys.Size = new System.Drawing.Size(311, 247);
             this.data_xys.TabIndex = 47;
             // 
             // label2
@@ -322,9 +288,9 @@
             // txt_show
             // 
             this.txt_show.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_show.Location = new System.Drawing.Point(18, 326);
+            this.txt_show.Location = new System.Drawing.Point(18, 279);
             this.txt_show.Name = "txt_show";
-            this.txt_show.Size = new System.Drawing.Size(612, 154);
+            this.txt_show.Size = new System.Drawing.Size(612, 201);
             this.txt_show.TabIndex = 62;
             this.txt_show.Text = "";
             // 
@@ -385,7 +351,7 @@
             // rate_dam_input
             // 
             this.rate_dam_input.FormattingEnabled = true;
-            this.rate_dam_input.Location = new System.Drawing.Point(139, 241);
+            this.rate_dam_input.Location = new System.Drawing.Point(143, 244);
             this.rate_dam_input.Name = "rate_dam_input";
             this.rate_dam_input.Size = new System.Drawing.Size(173, 29);
             this.rate_dam_input.TabIndex = 50;
@@ -393,7 +359,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 244);
+            this.label9.Location = new System.Drawing.Point(14, 247);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 21);
             this.label9.TabIndex = 49;
@@ -1055,7 +1021,8 @@
             // 说明ToolStripMenuItem
             // 
             this.说明ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.坝轴线方向与X线方向必须一致ToolStripMenuItem});
+            this.坝轴线方向与X线方向必须一致ToolStripMenuItem,
+            this.不同类型的趾板LbcToolStripMenuItem});
             this.说明ToolStripMenuItem.Name = "说明ToolStripMenuItem";
             this.说明ToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
             this.说明ToolStripMenuItem.Text = "说明";
@@ -1201,6 +1168,12 @@
             this.label42.TabIndex = 125;
             this.label42.Text = "末段面板宽(米)：";
             // 
+            // 不同类型的趾板LbcToolStripMenuItem
+            // 
+            this.不同类型的趾板LbcToolStripMenuItem.Name = "不同类型的趾板LbcToolStripMenuItem";
+            this.不同类型的趾板LbcToolStripMenuItem.Size = new System.Drawing.Size(338, 22);
+            this.不同类型的趾板LbcToolStripMenuItem.Text = "2.不同类型的趾板Lbc长度必须一致";
+            // 
             // Form智能设计
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -1264,7 +1237,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.HeightLimit1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.RadioPanel);
             this.Controls.Add(this.end_z);
             this.Controls.Add(this.end_y);
             this.Controls.Add(this.end_x);
@@ -1293,8 +1265,6 @@
             this.Name = "Form智能设计";
             this.Text = "趾板结构体型参数化设计系统-V2.0";
             this.Load += new System.EventHandler(this.Form智能设计_Load);
-            this.RadioPanel.ResumeLayout(false);
-            this.RadioPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.end_z)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.end_x)).EndInit();
@@ -1338,10 +1308,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel RadioPanel;
-        private System.Windows.Forms.RadioButton DirABTrue;
-        private System.Windows.Forms.RadioButton DirABFalse;
         private System.Windows.Forms.NumericUpDown end_z;
         private System.Windows.Forms.NumericUpDown end_y;
         private System.Windows.Forms.NumericUpDown end_x;
@@ -1433,5 +1399,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.ToolStripMenuItem 说明ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 坝轴线方向与X线方向必须一致ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 不同类型的趾板LbcToolStripMenuItem;
     }
 }

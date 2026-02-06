@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ZhiBan
 {
-    class FuncDam
+    class 趾板_FuncDam
     {
         public static ArrayList section(point[] points, double len)
         {

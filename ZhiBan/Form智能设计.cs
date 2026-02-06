@@ -46,9 +46,6 @@ namespace ZhiBan
 
         private void 面板建模ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool direction_ab = true;
-            if (DirABFalse.Checked)
-                direction_ab = false;
             point start = new point(Convert.ToDouble(start_x.Value), Convert.ToDouble(start_y.Value), Convert.ToDouble(start_z.Value));
             point end = new point(Convert.ToDouble(end_x.Value), Convert.ToDouble(end_y.Value), Convert.ToDouble(end_z.Value));
             double dam_rate = Convert.ToDouble(rate_dam_input.SelectedItem);

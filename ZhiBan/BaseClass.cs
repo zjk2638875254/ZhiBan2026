@@ -29,7 +29,7 @@ namespace ZhiBan
         }
     }
 
-    class point
+    public class point
     {
         public double x;
         public double y;

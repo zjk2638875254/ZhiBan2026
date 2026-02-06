@@ -204,7 +204,7 @@ namespace ZhiBan
                         string res_message = "";
                         point[] section_points = (point[])point_list[i];
                         section_para sec_para = (section_para)para_list[i];
-                        FuncDam.single_dam(start, end, dam_rate, section_points[0], section_points[1], sec_para, ref pos, ref res_message);
+                        趾板_FuncDam.single_dam(start, end, dam_rate, section_points[0], section_points[1], sec_para, ref pos, ref res_message);
                         /*
                         Log.write_log("D:\\趾板Log.txt", pos.Count + "\r\n");
                         for (int j = 0; j < pos.Count; j++)
@@ -223,8 +223,8 @@ namespace ZhiBan
                         string res_message_before = "";
                         ArrayList pos_after = new ArrayList { };
                         string res_message_after = "";
-                        FuncDam.single_dam(start, end, dam_rate, section_points_before[0], section_points_before[1], sec_para_before, ref pos_before, ref res_message_before);
-                        FuncDam.single_dam(start, end, dam_rate, section_points_after[0], section_points_after[1], sec_para_after, ref pos_after, ref res_message_after);
+                        趾板_FuncDam.single_dam(start, end, dam_rate, section_points_before[0], section_points_before[1], sec_para_before, ref pos_before, ref res_message_before);
+                        趾板_FuncDam.single_dam(start, end, dam_rate, section_points_after[0], section_points_after[1], sec_para_after, ref pos_after, ref res_message_after);
                         point[] before1 = new point[7];
                         for (int j = 0; j < 7; j++)
                             before1[j] = (point)pos_before[j];
@@ -247,7 +247,7 @@ namespace ZhiBan
                             Log.write_log("D:\\趾板Log.txt", ((point)pos_after[j]).x.ToString() + "\r\n");
                         Log.write_log("D:\\趾板Log.txt", "-------------------\r\n");
                         */
-                        FuncDam.merge_dam(start, end, before1, before2, after1, after2, ref pos);
+                        趾板_FuncDam.merge_dam(start, end, before1, before2, after1, after2, ref pos);
                     }
                     Log.write_log("D:\\趾板Log.txt", "begin geo：" + "\r\n");
                     BentleyGeo.make_geo_single(pos);

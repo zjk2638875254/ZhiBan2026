@@ -1,33 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\",
+  "WorkspaceRootPath": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\\u9762\u677F_location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\\u9762\u677F_location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u9762\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u9762\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u9762\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u9762\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\funcdam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\funcdam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u5806\u77F3\u575D.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u5806\u77F3\u575D.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\\u9762\u677F_funcdam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\\u9762\u677F_funcdam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\\u9762\u677F_funcmerge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\\u9762\u677F_funcmerge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\baseclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\baseclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\zhiban\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form\u667A\u80FD\u8BBE\u8BA1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u5806\u77F3\u575D.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u5806\u77F3\u575D.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\\u8DBE\u677F_funcmerge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\\u8DBE\u677F_funcmerge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u8DBE\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u8DBE\u677F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|d:\\2026\\\u8DBE\u677F\\zhiban2026\\zhiban\\form_\u7ED8\u56FE.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\form_\u7ED8\u56FE.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\zhiban\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1952452-D077-47D8-8960-AAF061F12E35}|ZhiBan\\ZhiBan.csproj|solutionrelative:zhiban\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,98 +62,174 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FuncDam.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\FuncDam.cs",
-              "RelativeDocumentMoniker": "ZhiBan\\FuncDam.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\FuncDam.cs",
-              "RelativeToolTip": "ZhiBan\\FuncDam.cs",
-              "ViewState": "AgIAAFQCAAAAAAAAAAAUwAgBAABZAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "BaseClass.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\BaseClass.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\BaseClass.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\BaseClass.cs",
+              "RelativeToolTip": "ZhiBan\\BaseClass.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T00:49:02.849Z",
+              "WhenOpened": "2026-02-06T04:08:20.284Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "\u9762\u677F_location.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_location.cs",
-              "RelativeDocumentMoniker": "ZhiBan\\\u9762\u677F_location.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_location.cs",
-              "RelativeToolTip": "ZhiBan\\\u9762\u677F_location.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAowFoAAAAaAAAAAAAAAA==",
+              "Title": "Form_\u9762\u677F.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u9762\u677F.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u9762\u677F.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u9762\u677F.cs",
+              "RelativeToolTip": "ZhiBan\\Form_\u9762\u677F.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwCwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T00:41:43.882Z",
+              "WhenOpened": "2026-02-06T04:10:50.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form_\u5806\u77F3\u575D.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "RelativeToolTip": "ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAawB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T02:53:35.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form\u667A\u80FD\u8BBE\u8BA1.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
               "RelativeDocumentMoniker": "ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
               "RelativeToolTip": "ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAUwHYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAnwEAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T23:37:59.654Z",
+              "WhenOpened": "2026-02-06T02:52:51.932Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Form\u667A\u80FD\u8BBE\u8BA1.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
               "RelativeDocumentMoniker": "ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs [\u8BBE\u8BA1]",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "ZhiBan\\Form\u667A\u80FD\u8BBE\u8BA1.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T23:58:59.29Z",
+              "WhenOpened": "2026-02-06T02:51:28.647Z",
               "EditorCaption": " [\u8BBE\u8BA1]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\MainForm.cs",
-              "RelativeDocumentMoniker": "ZhiBan\\MainForm.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\MainForm.cs",
-              "RelativeToolTip": "ZhiBan\\MainForm.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAADwv5oAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Form_\u5806\u77F3\u575D.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u5806\u77F3\u575D.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u5806\u77F3\u575D.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZhiBan\\Form_\u5806\u77F3\u575D.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T00:05:33.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "\u9762\u677F_FuncMerge.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_FuncMerge.cs",
-              "RelativeDocumentMoniker": "ZhiBan\\\u9762\u677F_FuncMerge.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_FuncMerge.cs",
-              "RelativeToolTip": "ZhiBan\\\u9762\u677F_FuncMerge.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAIA3wBMAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T00:23:59.906Z"
+              "WhenOpened": "2026-02-06T02:31:11.944Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "\u9762\u677F_FuncDam.cs",
-              "DocumentMoniker": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_FuncDam.cs",
-              "RelativeDocumentMoniker": "ZhiBan\\\u9762\u677F_FuncDam.cs",
-              "ToolTip": "D:\\2024\u5DE5\u4F5C\\\u79D1\u6280\u7ACB\u9879\\\u8003\u53E4\\\u8DBE\u677F-12\u6708\u7EC8\u6781\u7248\\\u8003\u53E4\u4FEE\u6539\\ZhiBan\\\u9762\u677F_FuncDam.cs",
-              "RelativeToolTip": "ZhiBan\\\u9762\u677F_FuncDam.cs",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAywPwAAAAjAAAAAAAAAA==",
+              "Title": "Form_V3.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_V3.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_V3.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_V3.cs",
+              "RelativeToolTip": "ZhiBan\\Form_V3.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswBsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T23:57:55.303Z"
+              "WhenOpened": "2026-02-06T02:26:53.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form_V3.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_V3.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_V3.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_V3.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZhiBan\\Form_V3.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T01:50:33.699Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form_\u7ED8\u56FE.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u7ED8\u56FE.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u7ED8\u56FE.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u7ED8\u56FE.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZhiBan\\Form_\u7ED8\u56FE.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T01:15:03.786Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form_\u8DBE\u677F.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u8DBE\u677F.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u8DBE\u677F.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u8DBE\u677F.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZhiBan\\Form_\u8DBE\u677F.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T01:08:11.333Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "\u8DBE\u677F_FuncMerge.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\\u8DBE\u677F_FuncMerge.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\\u8DBE\u677F_FuncMerge.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\\u8DBE\u677F_FuncMerge.cs",
+              "RelativeToolTip": "ZhiBan\\\u8DBE\u677F_FuncMerge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T01:06:14.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form_\u9762\u677F.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u9762\u677F.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\Form_\u9762\u677F.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\Form_\u9762\u677F.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "ZhiBan\\Form_\u9762\u677F.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T00:57:23.676Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\MainForm.cs",
+              "RelativeDocumentMoniker": "ZhiBan\\MainForm.cs",
+              "ToolTip": "D:\\2026\\\u8DBE\u677F\\ZhiBan2026\\ZhiBan\\MainForm.cs",
+              "RelativeToolTip": "ZhiBan\\MainForm.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAwwJoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T00:05:33.578Z",
+              "EditorCaption": ""
             }
           ]
         }
