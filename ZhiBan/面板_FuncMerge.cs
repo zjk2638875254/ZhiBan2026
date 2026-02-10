@@ -53,15 +53,6 @@ namespace ZhiBan
             }
         }
 
-
-
-
-
-
-
-
-
-
         //推论
         public static bool merge_dam(point line_s, point line_e, point[] merge_before1, point[] merge_before2, point[] merge_after1, point[] merge_after2, ref ArrayList points_list)
         {

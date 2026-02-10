@@ -60,6 +60,7 @@ namespace ZhiBan
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入X线坐标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入体型参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入坝轴线坐标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.视图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.三维展示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.清除文本框ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,9 @@ namespace ZhiBan
             this.按板长建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.测试按板长建模ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.导入坝轴线坐标ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxMain.SuspendLayout();
             this.RadioPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.end_z)).BeginInit();
@@ -438,6 +441,13 @@ namespace ZhiBan
             this.导入体型参数ToolStripMenuItem.Text = "导入体型参数";
             this.导入体型参数ToolStripMenuItem.Click += new System.EventHandler(this.导入体型参数ToolStripMenuItem_Click);
             // 
+            // 导入坝轴线坐标ToolStripMenuItem
+            // 
+            this.导入坝轴线坐标ToolStripMenuItem.Name = "导入坝轴线坐标ToolStripMenuItem";
+            this.导入坝轴线坐标ToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.导入坝轴线坐标ToolStripMenuItem.Text = "导入坝轴线坐标";
+            this.导入坝轴线坐标ToolStripMenuItem.Click += new System.EventHandler(this.导入坝轴线坐标ToolStripMenuItem_Click);
+            // 
             // 视图ToolStripMenuItem
             // 
             this.视图ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -522,10 +532,13 @@ namespace ZhiBan
             // 
             // 帮助ToolStripMenuItem
             // 
+            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
             this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.帮助ToolStripMenuItem.Text = "帮助";
-            this.帮助ToolStripMenuItem.Click += new System.EventHandler(this.帮助ToolStripMenuItem_Click);
             // 
             // 测试按板长建模ToolStripMenuItem
             // 
@@ -534,12 +547,23 @@ namespace ZhiBan
             this.测试按板长建模ToolStripMenuItem.Text = "测试-按板长建模";
             this.测试按板长建模ToolStripMenuItem.Click += new System.EventHandler(this.测试按板长建模ToolStripMenuItem_Click);
             // 
-            // 导入坝轴线坐标ToolStripMenuItem
+            // xToolStripMenuItem
             // 
-            this.导入坝轴线坐标ToolStripMenuItem.Name = "导入坝轴线坐标ToolStripMenuItem";
-            this.导入坝轴线坐标ToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.导入坝轴线坐标ToolStripMenuItem.Text = "导入坝轴线坐标";
-            this.导入坝轴线坐标ToolStripMenuItem.Click += new System.EventHandler(this.导入坝轴线坐标ToolStripMenuItem_Click);
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.xToolStripMenuItem.Text = "1.X线坐标必须是X递增的方向";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(322, 22);
+            this.toolStripMenuItem2.Text = "2.坝轴线方向必须是X递增的方向";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(479, 22);
+            this.toolStripMenuItem3.Text = "3.If have any question, please call 8509 2104";
             // 
             // MainForm
             // 
@@ -620,5 +644,8 @@ namespace ZhiBan
         private System.Windows.Forms.Panel RadioPanel;
         private System.Windows.Forms.ToolStripMenuItem 测试按板长建模ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 导入坝轴线坐标ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

@@ -116,12 +116,16 @@ namespace ZhiBan
             }
             return v3;
         }
-        private static double[] get_cz_vec(double[] v, point bp, point tp)
+        private static double[] get_cz_vec(double[] v, point bp, point dam_start, point dam_end)
         {
             double[] res = new double[3] { v[1], (-1) * v[0], 0 };
-            double old_len = Math.Sqrt((bp.x - tp.x) * (bp.x - tp.x) + (bp.y - tp.y) * (bp.y - tp.y) + (bp.z - tp.z) * (bp.z - tp.z));
-            double new_len = Math.Sqrt((bp.x - tp.x + res[0]) * (bp.x - tp.x + res[0]) + (bp.y - tp.y + res[1]) * (bp.y - tp.y + res[1]) + (bp.z - tp.z) * (bp.z - tp.z));
-            if (new_len > old_len)
+            double A = dam_end.y - dam_start.y;
+            double B = dam_start.x - dam_end.x;
+            double C = dam_end.x * dam_start.y - dam_start.x * dam_end.y;
+            double old_len = Math.Abs(A * bp.x + B * bp.y + C) / Math.Sqrt(A * A + B * B);
+            double new_len = Math.Abs(A * (bp.x + res[0]) + B * (bp.y + res[1]) + C) / Math.Sqrt(A * A + B * B);
+
+            if (new_len < old_len)
             {
                 res[0] = (-1) * res[0];
                 res[1] = (-1) * res[1];
@@ -159,7 +163,7 @@ namespace ZhiBan
                 double[] test = new double[3] { end_p.x - start_p.x, end_p.y - start_p.y, end_p.z - start_p.z };
                 unit_vec(ref test);
                 points_list.Clear();
-                if (!single_section(dir_se, line_s.z, SecPara, start_p, end_p, rate_dam, ref points_list, ref output_message))
+                if (!single_section(line_s, line_e, dir_se, line_s.z, SecPara, start_p, end_p, rate_dam, ref points_list, ref output_message))
                     return false;
                 return true;
             }
@@ -179,9 +183,9 @@ namespace ZhiBan
                 point base_p = new point((line_s.x + line_e.x) / 2.0, (line_s.y + line_e.y) / 2.0, (line_s.z + line_e.z) / 2.0);
                 point[] merge_res1 = null;
                 point[] merge_res2 = null;
-                
+
                 //FuncMerge.merge_main(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
-                面板_FuncMerge.merge_main_precise(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, base_p, ref merge_res1, ref merge_res2);
+                趾板_FuncMerge.merge_main_precise(merge_before1, merge_before2, merge_after1, merge_after2, vec_dam, line_s, line_e, ref merge_res1, ref merge_res2);
 
                 points_list.Clear();
                 for (int t = 0; t < 7; t++)
@@ -307,15 +311,15 @@ namespace ZhiBan
 
         //计算趾板截面点坐标vector(A,B,C,D,Q,T)
         //先假定X（0,y,z）,之后平移第一个点到Z1，之后依次平移，有两种可能
-        private static bool single_section(double[] base_dir, double max_z, section_para para, point start, point end, double rate_dam, ref ArrayList results, ref string output_message)
+        private static bool single_section(point dam_start, point dam_end, double[] base_dir, double max_z, section_para para, point start, point end, double rate_dam, ref ArrayList results, ref string output_message)
         {
             try
             {
                 double[] start_end = new double[3] { start.x - end.x, start.y - end.y, start.z - end.z };
                 results.Clear();
                 point test_p = new point((start.x + end.x) / 2.0, (start.y + end.y) / 2.0, (start.z + end.z) / 2.0);
-                calculate_math(base_dir, start_end, max_z, para, rate_dam, start, ref results, ref output_message, start, test_p);
-                calculate_math(base_dir, start_end, max_z, para, rate_dam, end, ref results, ref output_message, start, test_p);
+                calculate_math(base_dir, start_end, max_z, para, rate_dam, start, ref results, ref output_message, test_p, dam_start, dam_end);
+                calculate_math(base_dir, start_end, max_z, para, rate_dam, end, ref results, ref output_message, test_p, dam_start, dam_end);
                 return true;
             }
             catch (Exception ex)
@@ -325,7 +329,7 @@ namespace ZhiBan
             }
         }
         //数学计算QT相关数值
-        private static bool calculate_math(double[] base_dir, double[] start_end, double line_z, section_para para, double rate_dam, point x_point, ref ArrayList results, ref string output_message, point base_p, point test_p)
+        private static bool calculate_math(double[] base_dir, double[] start_end, double line_z, section_para para, double rate_dam, point x_point, ref ArrayList results, ref string output_message, point base_p, point dam_start, point dam_end)
         {
             try
             {
@@ -388,7 +392,7 @@ namespace ZhiBan
 
                 double[] v_se = new double[3] { start_end[0], start_end[1], start_end[2] };
                 unit_vec(ref v_se);
-                double[] dir_ab = get_cz_vec(v_se, base_p, test_p);
+                double[] dir_ab = get_cz_vec(v_se, base_p, dam_start, dam_end);
                 unit_vec(ref dir_ab);
 
                 double[] v_ad = get_vec(v_se, dir_ab);
@@ -437,259 +441,5 @@ namespace ZhiBan
             results.Add(Xs);
         }
         #endregion
-
-        public static bool get_dir(point line_s, point line_e, double rate_dam, ArrayList xyz, ArrayList para_s, ref Dictionary<point, double[]> dir_list)
-        {
-            try
-            {
-                double[] max_min = new double[2] { 0, 0 };
-                /*
-                if (!convert_xyz_dir(ref line_s, ref line_e, ref xyz, ref max_min)) ;
-                    return false;
-                */
-                double[] dir_se = new double[3] { line_e.x - line_s.x, line_e.y - line_s.y, line_e.z - line_s.z };
-                dir_list.Clear();
-
-                for (int i = 0; i < xyz.Count; i++)
-                {
-                    point[] ps = (point[])xyz[i];
-                    ArrayList temp = new ArrayList();
-                    section_para SecPara = (section_para)para_s[i];
-                    ArrayList independent_sec = new ArrayList();
-                    for (int j = 0; j < ps.Length - 1; j++)
-                    {
-                        ArrayList temp_save = new ArrayList();
-                        string output_message = "";
-                        if (!single_section(dir_se, line_s.z, SecPara, ps[j], ps[j + 1], rate_dam, ref temp_save, ref output_message))
-                            return false;
-                        else
-                        {
-                            //ABCDTQX
-                            point original_A = (point)temp_save[0];
-                            point original_B = (point)temp_save[1];
-                            point original_D = (point)temp_save[3];
-
-                            point new_A = (point)temp_save[7];
-                            point new_B = (point)temp_save[8];
-                            point new_D = (point)temp_save[10];
-                            double[] dir1 = new double[6];
-                            dir1[0] = original_B.x - original_A.x;
-                            dir1[1] = original_B.y - original_A.y;
-                            dir1[2] = original_B.z - original_A.z;
-
-                            dir1[3] = (original_D.x - original_A.x) * 4;
-                            dir1[4] = (original_D.y - original_A.y) * 4;
-                            dir1[5] = (original_D.z - original_A.z) * 4;
-
-                            double[] dir2 = new double[6];
-                            dir2[0] = new_B.x - new_A.x;
-                            dir2[1] = new_B.y - new_A.y;
-                            dir2[2] = new_B.z - new_A.z;
-
-                            dir2[3] = (new_D.x - new_A.x) * 4;
-                            dir2[4] = (new_D.y - new_A.y) * 4;
-                            dir2[5] = (new_D.z - new_A.z) * 4;
-
-                            dir_list[ps[j]] = dir1;
-                            dir_list[ps[j + 1]] = dir2;
-                        }
-
-                    }
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-        public static bool convert_xyz_dir(ref point first_point, ref point last_point, ref ArrayList xys, ref double[] max_min)
-        {
-            try
-            {
-                ArrayList input = new ArrayList();
-                double min_x = first_point.x, min_y = first_point.y;
-
-                if (last_point.x < min_x)
-                    min_x = last_point.x;
-                if (last_point.y < min_y)
-                    min_y = last_point.y;
-
-                for (int i = 0; i < xys.Count; i++)
-                {
-                    point[] input_list = (point[])xys[i];
-                    for (int j = 0; j < input_list.Length; j++)
-                    {
-                        if (input_list[j].x < min_x)
-                            min_x = input_list[j].x;
-                        if (input_list[j].y < min_y)
-                            min_y = input_list[j].y;
-                    }
-                }
-                ArrayList revise_xys = new ArrayList();
-                for (int i = 0; i < xys.Count; i++)
-                {
-                    point[] input_list = (point[])xys[i];
-                    point[] pl = new point[input_list.Length];
-                    for (int j = 0; j < input_list.Length; j++)
-                    {
-                        point p = new point(input_list[j].x - min_x, input_list[j].y - min_y, input_list[j].z);
-                        pl[j] = p;
-                    }
-                    revise_xys.Add(pl);
-                }
-                max_min = new double[2];
-                max_min[0] = min_x;
-                max_min[1] = min_y;
-                first_point.x = first_point.x - min_x;
-                first_point.y = first_point.y - min_y;
-
-                last_point.x = last_point.x - min_x;
-                last_point.y = last_point.y - min_y;
-                xys.Clear();
-                for (int i = 0; i < revise_xys.Count; i++)
-                    xys.Add(revise_xys[i]);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-        //2026年1月更新---增加direction_ab判断
-        public static bool single_dam(point line_s, point line_e, double rate_dam, point start_p, point end_p, section_para SecPara, bool if_direction_ab_reverse, ref ArrayList points_list, ref string output_message)
-        {
-            try
-            {
-
-                double[] dir_se = new double[3] { line_e.x - line_s.x, line_e.y - line_s.y, line_e.z - line_s.z };
-                double[] test = new double[3] { end_p.x - start_p.x, end_p.y - start_p.y, end_p.z - start_p.z };
-                unit_vec(ref test);
-                points_list.Clear();
-                if (!single_section(dir_se, line_s.z, SecPara, start_p, end_p, rate_dam, if_direction_ab_reverse, ref points_list, ref output_message))
-                    return false;
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-        private static bool single_section(double[] base_dir, double max_z, section_para para, point start, point end, double rate_dam, bool if_direction_ab_reverse, ref ArrayList results, ref string output_message)
-        {
-            try
-            {
-                double[] start_end = new double[3] { start.x - end.x, start.y - end.y, start.z - end.z };
-                results.Clear();
-                point test_p = new point((start.x + end.x) / 2.0, (start.y + end.y) / 2.0, (start.z + end.z) / 2.0);
-                calculate_math(base_dir, start_end, max_z, para, rate_dam, start, if_direction_ab_reverse, ref results, ref output_message, start, test_p);
-                calculate_math(base_dir, start_end, max_z, para, rate_dam, end, if_direction_ab_reverse, ref results, ref output_message, start, test_p);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
-        private static bool calculate_math(double[] base_dir, double[] start_end, double line_z, section_para para, double rate_dam, point x_point, bool if_direction_ab_reverse, ref ArrayList results, ref string output_message, point base_p, point test_p)
-        {
-            try
-            {
-                //double mod_se = Math.Sqrt(start_end[0] * start_end[0] + start_end[1] * start_end[1]);
-                //double[] se_xy = new double[2] { -1 * start_end[1] / mod_se, start_end[0] / mod_se };
-
-
-                //真倾角假倾角
-                double math1 = base_dir[0] * start_end[0] + base_dir[1] * start_end[1];
-                double math2 = Math.Sqrt(base_dir[0] * base_dir[0] + base_dir[1] * base_dir[1]);
-                double math3 = Math.Sqrt(start_end[0] * start_end[0] + start_end[1] * start_end[1]);
-                double angle_xy_level = Math.Acos(math1 / math2 / math3);
-
-                double test_angle = angle_xy_level / Math.PI * 180.0;
-                if (angle_xy_level > Math.PI / 2)
-                    angle_xy_level = Math.PI - angle_xy_level;
-
-                //output_txt("X:" + x_point.z.ToString() + "  ");
-                output_message += "X：" + x_point.z.ToString() + "    ";
-
-                double xita1 = Math.Asin(Math.Cos(angle_xy_level) / Math.Sqrt(1 + rate_dam * rate_dam));
-                double xita2 = Math.Asin(Math.Cos(angle_xy_level) / Math.Sqrt(1 + para.rate_qt * para.rate_qt));
-                //output_txt("θ：" + (xita1 / Math.PI * 180.0).ToString() + "    ");
-                output_message += "θ:" + (xita1 / Math.PI * 180.0).ToString() + "  ";
-
-                //角度计算完毕
-                double rate_xita1 = 1.0 / Math.Tan(xita1);
-                double rate_xita2 = 1.0 / Math.Tan(xita2);
-                //BA延长线与CT相交假定点E,Z点向AB边做垂线交于点F,T点向AB边做垂线交于点G
-                double Lbe = para.Lbc / rate_xita1;
-                double z_z = (Lbe + para.Lbx) / (rate_xita1 + 1.0 / rate_xita1);//z与ab高差
-                double z_all = x_point.z + z_z;//z点真实高程
-                //output_txt("Z:" + z_all.ToString() + "    ");
-                output_message += "Z:" + z_all.ToString() + "  ";
-
-                double arc_dam = Math.Atan(1.0 / rate_xita1);
-                double arc_2 = Math.Atan(1.0 / rate_xita2);
-                double arc = Math.PI / 2 + arc_2 - arc_dam;
-                //double t = para.T + 0.0035 * (line_z - z_all);
-                double t = para.T + (line_z - z_all) * Math.Sqrt(1 + rate_xita1 * rate_xita1) / Math.Tan(arc);
-                //output_txt("t：" + t.ToString() + "    ");
-                output_message += "t:" + t.ToString() + "  ";
-                double Hxt = z_z + t * rate_xita1 / Math.Sqrt(rate_xita1 * rate_xita1 + 1);
-                double Hqt = Hxt - para.Lad;
-                double Ltbh = Hqt * Math.Tan(xita1) + (para.Lad - para.Lbc) * Math.Tan(xita1);
-                double Ldq = para.Lax + para.Lbx - Hqt / Math.Tan(xita1) - Ltbh;
-
-
-                double point_t_z = z_all + t * rate_xita1 / Math.Sqrt(1 + rate_xita1 * rate_xita1);
-                double Lxg_s = (para.Lbx + Lbe) - (point_t_z - x_point.z) / rate_xita1;
-                double Lxt = (Hxt - para.Lbc) * Math.Tan(xita1);
-
-                point Ts = new point(0, 0, point_t_z);
-                //double Ldq = rate_xita1 * (point_t_z - x_point.z - para.Lad);
-                double Lqt = Hqt * Math.Tan(xita1);
-                double Htq = Hxt - para.Lad;
-
-                double[] v_se = new double[3] { start_end[0], start_end[1], start_end[2] };
-                unit_vec(ref v_se);
-                double[] dir_ab = get_cz_vec(v_se, base_p, test_p);
-                unit_vec(ref dir_ab);
-                if(if_direction_ab_reverse)
-                {
-                    dir_ab[0] = dir_ab[0] * (-1.0);
-                    dir_ab[1] = dir_ab[1] * (-1.0);
-                }
-                double[] v_ad = get_vec(v_se, dir_ab);
-
-                if (v_ad[2] < 0)
-                {
-                    v_ad[0] = (-1) * v_ad[0];
-                    v_ad[1] = (-1) * v_ad[1];
-                    v_ad[2] = (-1) * v_ad[2];
-                }
-                calculate_points(x_point, v_se, dir_ab, v_ad, para, Lqt, Hqt, Ldq, ref results);
-                point D = (point)results[results.Count - 4], Q = (point)results[results.Count - 2];
-                output_message += "L2:" + Math.Sqrt((D.x - Q.x) * (D.x - Q.x) + (D.y - Q.y) * (D.y - Q.y)).ToString() + "\r\n";
-
-                //output_txt("L2：" + Math.Sqrt(Ds.x - Qs.x) * (Ds.x - Qs.x) + (Ds.y - Qs.y) * (Ds.y - Qs.y)).ToString() + "\r\n");
-                //output_txt("L2：" + "\r\n");
-                //output_message += "L2:" + Math.Sqrt((Ds.x - Qs.x) * (Ds.x - Qs.x) + (Ds.y - Qs.y) * (Ds.y - Qs.y)).ToString() + "\r\n";
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
-        }
-
     }
 }

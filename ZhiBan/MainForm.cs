@@ -156,11 +156,6 @@ namespace ZhiBan
             txt_show.Text += message;
         }
 
-        private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("If have any question, please call 8509 2104.");
-        }
-
         private void 测试按板长建模ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
